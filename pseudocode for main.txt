@@ -1,0 +1,32 @@
+0. Define Variables:
+0.1 int year, answer, nextLeap, zellerDay
+0.2 boolean repeat, leap
+0.3 String day
+0.4 int nextLeap
+
+Algorithm to take user inputted year and determine if it was a leap year
+
+START
+1. Set repeat = true. 
+2. Repeat program WHILE repeat = true : 
+3. Ask user to input a year greater than 1582: "Please input a year after 1582."
+4. year <<< user input
+5. Validate input
+	5.1 If year <= 1582, set repeat = false
+	5.2 Otherwise, check if year is leap year
+	5.3 If num is not leap year:
+		5.3.1 Set repeat = false
+6. If year is valid:
+	6.1 Plug year into a method zeller()
+	6.2 zellerDay <<< day of Feb 29 on that year
+	6.3 day <<< zellerDay converted to corresponding day of the week
+	6.4 Repeat UNTIL nextLeap = zellerDay
+		6.4.1 year = year + 4
+		6.4.2 check if year is leap year
+			6.4.2.1 if not leap year, year = year + 4
+		6.4.3 nextLeap <<< day of feb 29 on that year (use zeller() method)
+	6.5 nextLeap <<< year
+	6.6 Output year
+7. Ask user if they want to repeat program: "Input 1 for yes, input 2 for no"
+	7.1 If answer = 2, set repeat = false;
+8. STOP
